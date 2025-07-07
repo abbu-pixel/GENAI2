@@ -17,11 +17,11 @@ export default function Chat() {
       const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${import.meta.env.VITE_OPENROUTER_API_KEY}`,
-          'Content-Type': 'application/json'
+         'Authorization': 'Bearer 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',
+         'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          model: 'deepseek/deepseek-r1-0528-qwen3-8b:free',
+          model: 'deepseek/deepseek-r1:free', // ✅ Using OpenAI's model
           messages: [
             { role: 'system', content: 'You are GenAI, a helpful and wise assistant.' },
             { role: 'user', content: text }
